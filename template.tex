@@ -1,0 +1,44 @@
+\RequirePackage{luatex85}
+\documentclass[leqno]{ltjsarticle}% leqnoは数式番号左
+\usepackage{luatexja-fontspec}
+%\setmainfont[Ligatures=TeX]{MS Mincho}
+%\setmainjfont[YokoFeatures={JFM=prop},]{UD Digi Kyokasho NK-R}% デジタル教科書体
+%\setmainfont{Gen Shin Gothic Regular}
+\usepackage[top=10truemm,bottom=10truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage{luatexja} % ltjclasses, ltjsclasses のときは要らんらしい
+\usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,mypkg}%色々なパッケージ
+\usepackage[all]{xy}% 何だったっけな
+\usepackage{unicode-math}
+\titleformat*{\section}{\Large\bfseries}
+\setlength{\parindent}{0pt}% インデントくたばれ！
+\pagestyle{empty}
+
+\usepackage{listings}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  lineskip=-0.5ex
+}
+\begin{document}
+\begin{lstlisting}[caption=hoge,label=fuga]
+  package main
+  
+  import "fmt"
+  
+  func main() {
+      for i := 0; i < 10; i++ {
+          fmt.Println("Hello, world")
+      }
+  }
+  \end{lstlisting}
+\end{document}
